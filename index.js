@@ -110,13 +110,11 @@ return rock;
  * Finally, alert "YOU LOSE!" to the player.
  */
 function endGame() {
-  clearInterval(gameInterval);
-
-  for(var i = 0; i < ROCKS.length; i++){
-    ROCKS[i].remove();
-  }
-window.removeEventListener('keydown', moveDodger);
-alert("YOU LOSE!");
+  window.removeEventListener('keydown', moveDodger);
+  window.clearInterval(gameInterval);
+  ROCKS.forEach(function (rock){
+    rock.remove();
+  })
 }
 
 function moveDodger(e) {
