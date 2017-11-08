@@ -123,12 +123,12 @@ moveRock(rock);
  */
 function endGame() {
   clearInterval(gameInterval);
-  window.removeEventListener('keydown', moveDodger);
-  for (let rock of ROCKS) {
-    rock.remove();
+
+  for(var i = 0; i < ROCKS.length; i++){
+    ROCKS[i].remove();
   }
-  alert("YOU LOSE!");
-  window.location.reload();
+window.removeEventListener('keydown', moveDodger);
+alert("YOU LOSE!");
 }
 
 function moveDodger(e) {
