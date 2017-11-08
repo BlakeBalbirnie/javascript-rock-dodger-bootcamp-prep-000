@@ -59,6 +59,7 @@ function createRock(x) {
 
   rock.className = 'rock'
   rock.style.left = `${x}px`
+}
 
   // Hmmm, why would we have used `var` here?
   var top = 0
@@ -102,7 +103,6 @@ if (top < 400) {
      * But if the rock *has* reached the bottom of the GAME,
      * we should remove the rock from the DOM
      */
-}
 }
 
 window.requestAnimationFrame(step);
