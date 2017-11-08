@@ -84,11 +84,14 @@ GAME.appendChild(rock);
 if(checkCollision(rock)){
   endGame();
 }
-if(top < GAME_HEIGHT){
-  window.requestAnimationFrame(moveRock);
+if(top < 400){
+  top += 2
+  rock.style.top = `${top}px`
+  window.requestAnimationFrame(moveRock)
 } else {
-  rock.remove();
-}
+  if (rock.parentNode){
+    rock.remove()
+  }
 }
 
   // We should kick of the animation of the rock around here
