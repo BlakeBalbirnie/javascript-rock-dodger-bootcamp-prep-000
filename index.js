@@ -84,8 +84,8 @@ GAME.appendChild(rock);
      */
 function step() {
   rock.style.top = `${top += 2}px`;
-  if(checkCollision(rock)) {
-    endGame();
+  if(checkCollision(rock)===true) {
+    return endGame();
   } else {
     /**
      * Otherwise, if the rock hasn't reached the bottom of
