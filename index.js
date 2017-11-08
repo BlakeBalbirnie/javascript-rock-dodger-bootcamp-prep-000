@@ -86,7 +86,8 @@ if(checkCollision(rock)){
 }
 if(top < GAME_HEIGHT){
   window.requestAnimationFrame(moveRock);
-} else {
+} 
+  else {
   rock.remove();
 }
 }
