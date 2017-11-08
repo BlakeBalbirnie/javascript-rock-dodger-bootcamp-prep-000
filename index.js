@@ -143,13 +143,16 @@ if (e.which === LEFT_ARROW) {
 
 function moveDodgerLeft() {
 
-window.requestAnimationFrame(function (){
-  const left = positionToInteger(DODGER.style.left)
-
-  if(left > 0){
-    DODGER.style.left = `${left - 4}px`
+function step() {
+  if (left > 0 && direction === 'left') {
+    dodger.style.left = `${left -= 4}px`
+    window.requestAnimationFrame(step);
   }
-})
+}
+  let left = positionToInteger(dodger.style.left);
+  direction = 'left';
+  window.requestAnimationFrame(step);
+}
 
 function moveDodgerRight() {
 
