@@ -61,7 +61,9 @@ function createRock(x) {
   rock.style.left = `${x}px`
 
   // Hmmm, why would we have used `var` here?
-  var top = rock.style.top = top;
+  var top = 0
+
+  rock.style.top = top;
 
   /**
    * Now that we have a rock, we'll need to append
@@ -80,11 +82,10 @@ GAME.appendChild(rock);
      * If a rock collides with the DODGER,
      * we should call endGame()
      */
-function step() {
+  if (checkCollision(rock)) {
+    return endGame();
+  }
   rock.style.top = `${top += 2}px`;
-  if(checkCollision(rock)) {
-    endGame();
-  } else {
     /**
      * Otherwise, if the rock hasn't reached the bottom of
      * the GAME, we want to move it again.
